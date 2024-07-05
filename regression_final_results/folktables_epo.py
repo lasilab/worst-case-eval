@@ -124,7 +124,7 @@ if __name__ == "__main__":
     # generate predict then optimize dataset from training data
     num_data = 15000 # number of data/samples we take
     num_feat = 8 if task == "income" else 16 # size of feature
-    num_item = 40 # number of items/individuals per sample
+    num_item = 25 # number of items/individuals per sample
     limit = 10*num_item # cost we're willing to incur per instance
 
     def dp_vectorized_knapsack(costs, rewards, capacity, actual_rewards):

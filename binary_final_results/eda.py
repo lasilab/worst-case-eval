@@ -98,7 +98,7 @@ class NeuralNetworkIncome(nn.Module):
         return out
 
 if __name__ == "__main__":
-    states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
+    states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"][:5]
     tasks = ["employment", "income"]
 
     for k, task in enumerate(tasks):
@@ -112,7 +112,7 @@ if __name__ == "__main__":
         costs = {} # contains cost to treat each individual
         rewards = {} # contains reward for each individual if treated
         finalfinalweights = {}
-        numdata = 40
+        numdata = 25
         # for each state, read in data
         for i, state in tqdm(list(enumerate(states))):
             acs_data = data_source.get_data(states=[state], download=False)
@@ -161,7 +161,7 @@ if __name__ == "__main__":
             model = torch.load("{}/{}.pt".format(model_path, model_path))
             all_weights = {}
             for loss_name in loss_names:
-                with open("{}_optimized_35000_40_40/test_converged_weights_{}.pickle".format(model_path, loss_name), 'rb') as handle:
+                with open("{}_optimized_10000_25_25/test_converged_weights_{}.pickle".format(model_path, loss_name), 'rb') as handle:
                     weights = pickle.load(handle)
                     all_weights[loss_name] = weights
 

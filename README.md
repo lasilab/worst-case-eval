@@ -103,7 +103,7 @@ Once either `run_all.sh` or a combination of `binary_experiments.sh` and `regres
 
 ## License 
 
-This repository is licensed under the terms of the [MIT License](https://github.com/lasilab/worst-case-eval?tab=MIT-1-ov-file).
+This repository is licensed under the terms of the [MIT License](https://github.com/kren333/worst_case_resource_allocation_final?tab=MIT-1-ov-file).
 
 ## Questions?
 

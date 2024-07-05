@@ -16,7 +16,7 @@ if __name__ == "__main__":
     mainpaths = ["binary_final_results", "regression_final_results"]
 
     for mainpath in mainpaths:
-        states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
+        states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"][:5]
         tasks = ["employment", "income"] if "binary" in mainpath else ["income"]
         methods = ["SPO", "CE"]
         loss_fns = ["knapsack", "top-k", "acc", "fair", "ce"] if "binary" in mainpath else ["knapsack", "top-k", "util", "fair", "mse"]
@@ -28,7 +28,7 @@ if __name__ == "__main__":
                 bounds = [[None for _ in range(len(loss_fns))] for _ in range(len(loss_fns))]
                 for model_state in states:
                     model_path = f"{model_state}_{method}_{task}"
-                    with open(f"{mainpath}/{model_path}_optimized_35000_40_40/final_results.pickle", 'rb') as handle:
+                    with open(f"{mainpath}/{model_path}_optimized_10000_25_25/final_results.pickle", 'rb') as handle:
                         grid = pickle.load(handle)
                     assert(grid.shape == (5,5))
 

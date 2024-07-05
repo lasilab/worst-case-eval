@@ -71,11 +71,11 @@ class NeuralNetworkIncome(nn.Module):
 if __name__ == "__main__":
     # load in cached weights
     setting = "income"
-    numdata = 40
+    numdata = 25
     loss_fns = ["mse", "top-k", "knapsack", "util", "fair"]
 
     # load in data
-    states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
+    states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"][:5]
 
     data_source = ACSDataSource(survey_year='2018', horizon='1-Year', survey='person')
     test_data = {}
@@ -108,7 +108,7 @@ if __name__ == "__main__":
         model_path = f"{model_state}_{model_type}_{setting}"
         worst_weights = {}
         for loss_fn in loss_fns:
-            with open(f"{model_path}_optimized_35000_{numdata}_{numdata}/test_converged_weights_{loss_fn}.pickle", 'rb') as handle:
+            with open(f"{model_path}_optimized_10000_{numdata}_{numdata}/test_converged_weights_{loss_fn}.pickle", 'rb') as handle:
                 worst_weights[loss_fn] = pickle.load(handle)
         model = torch.load("{}/{}.pt".format(model_path, model_path))
 
