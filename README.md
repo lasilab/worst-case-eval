@@ -4,7 +4,14 @@
 
 This repository is the official implementation of the paper "Decision-Focused Evaluation of Worst-Case Distribution Shift" (UAI 2024). If you find this repository useful or use this code in your research, please cite the following paper:
 
-[TODO add bibtex citation]
+```bibtex
+@article{ren2024decision,
+  title={Decision-Focused Evaluation of Worst-Case Distribution Shift},
+  author={Ren, Kevin and Byun, Yewon and Wilder, Bryan},
+  journal={arXiv preprint arXiv:2407.03557},
+  year={2024}
+}
+```
 
 _Note_: To run a simplified version of our experiments (5 states, 25 individuals per optimization instance, 10,000 samples per iteration of the Frank-Wolfe algorithm) please switch to the `mini` branch via the following command
 
@@ -107,6 +114,6 @@ This repository is licensed under the terms of the [MIT License](https://github.
 
 ## Questions?
 
-For more details, refer to the accompanying paper: [Decision-Focused Evaluation of Worst-Case Distribution Shift](TODO: Insert arxiv link). 
+For more details, refer to the accompanying paper: [Decision-Focused Evaluation of Worst-Case Distribution Shift](https://arxiv.org/abs/2407.03557). 
 If you have questions, please feel free to reach us at kevinren@andrew.cmu.edu or to open an issue.
 
